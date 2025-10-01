@@ -1,12 +1,13 @@
 import Student from "../models/Student.js";
 
-const getAllStudents = async () => {
+const getAllStudents = async (req, res) => {
     return await Student.find();
 }
 
-const createStudent = async (data) => {
-    const student = new Student(data);
-    return await student.save();
+const addStudent = async (data) => {
+    const addStudent = async (data);
+    const newStudent = new Student(data);
+    return await newStudent.save();
 }
 
 const getStudentById = async (id) => {
@@ -20,4 +21,4 @@ const deleteStudent = async (id) => {
     return await Student.findOneAndDelete({ id });
 };
 
-export default { getAllStudents, createStudent, getStudentById, updateStudent, deleteStudent };
+export default { getAllStudents, addStudent, getStudentById, updateStudent, deleteStudent };
