@@ -10,9 +10,9 @@ export const getAllStudents = async () => {
     }
 }
 
-export const createStudent = async (data) => {
+export const addStudent = async (data) => {
     try {
-        const student = await studentService.createStudent(data);
+        const student = await studentService.addStudent(data);
         res.status(201).json(student);
     } catch (error) {
         res.status(400).json(({ message: error.message }));
